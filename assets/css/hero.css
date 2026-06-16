@@ -1,0 +1,126 @@
+/* Webba Hero - Base */
+.webbakit-hero {
+	padding: clamp(2rem, 5vw, 4rem);
+	background: linear-gradient(140deg, rgba(37, 99, 235, 0.08), rgba(255, 255, 255, 0.95));
+}
+
+.webbakit-hero__inner {
+	display: grid;
+	gap: 2rem;
+}
+
+.webbakit-hero__content {
+	display: grid;
+	gap: 1rem;
+}
+
+.webbakit-hero__badge {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	padding: 0.3rem 0.8rem;
+	color: var(--webbakit-primary);
+	background: #dbeafe;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.webbakit-hero__pretitle {
+	margin: 0;
+	color: var(--webbakit-primary);
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.webbakit-hero__title {
+	margin: 0;
+	font-size: clamp(2.5rem, 6vw, 5rem);
+	line-height: 0.98;
+}
+
+.webbakit-hero__highlight {
+	color: var(--webbakit-primary);
+}
+
+.webbakit-hero__actions {
+	display: grid;
+	gap: 1rem;
+}
+
+.webbakit-hero__button--secondary {
+	color: var(--webbakit-dark);
+	background: var(--webbakit-white);
+	border: 1px solid var(--webbakit-border);
+}
+
+.webbakit-hero__panel,
+.webbakit-hero__card {
+	background: var(--webbakit-white);
+}
+
+.webbakit-hero__image {
+	display: block;
+	width: 100%;
+	border-radius: inherit;
+	object-fit: cover;
+}
+
+.webbakit-hero__floating {
+	position: relative;
+}
+
+.webbakit-hero__floating-badge {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	display: inline-flex;
+	padding: 0.35rem 0.8rem;
+	color: var(--webbakit-white);
+	background: rgba(15, 23, 42, 0.82);
+	border-radius: 999px;
+	font-size: 0.78rem;
+}
+
+/* Webba Hero - Style 1: Centered SaaS hero */
+.webbakit-hero--style-1 {
+	text-align: center;
+}
+
+.webbakit-hero--style-1 .webbakit-hero__content {
+	max-width: 840px;
+	margin: 0 auto;
+	justify-items: center;
+}
+
+/* Webba Hero - Style 2: Split hero with image */
+.webbakit-hero--style-2 .webbakit-hero__panel {
+	padding: 1rem;
+	border: 1px solid var(--webbakit-border);
+	border-radius: var(--webbakit-radius);
+	background: rgba(255, 255, 255, 0.92);
+}
+
+/* Webba Hero - Style 3: Card-based hero with floating booking badge */
+.webbakit-hero--style-3 .webbakit-hero__card {
+	display: grid;
+	gap: 2rem;
+	padding: clamp(1.5rem, 4vw, 3rem);
+	border: 1px solid var(--webbakit-border);
+	border-radius: calc(var(--webbakit-radius) + 6px);
+	background: var(--webbakit-white);
+	box-shadow: var(--webbakit-shadow);
+}
+
+@media (min-width: 768px) {
+	.webbakit-hero__inner {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.webbakit-hero--style-3 .webbakit-hero__card {
+		grid-template-columns: 1.1fr 0.9fr;
+		align-items: center;
+	}
+}

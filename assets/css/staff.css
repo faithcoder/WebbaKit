@@ -1,0 +1,88 @@
+/* Webba Staff - Base */
+.webbakit-staff__grid {
+	display: grid;
+	grid-template-columns: repeat(var(--webbakit-columns-mobile, 1), minmax(0, 1fr));
+	gap: 1.25rem;
+}
+
+.webbakit-staff__card {
+	padding: 1.5rem;
+}
+
+.webbakit-staff__stack {
+	display: grid;
+	gap: 1rem;
+}
+
+.webbakit-staff__card--horizontal {
+	display: grid;
+	gap: 1rem;
+	align-items: center;
+}
+
+.webbakit-staff__image {
+	overflow: hidden;
+	margin-bottom: 1rem;
+	border-radius: 16px;
+}
+
+.webbakit-staff__image img {
+	display: block;
+	width: 100%;
+	border-radius: inherit;
+	object-fit: cover;
+}
+
+.webbakit-staff__image--circle {
+	width: 9rem;
+	height: 9rem;
+	margin-inline: auto;
+	border-radius: 999px;
+}
+
+.webbakit-staff__name {
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.3;
+}
+
+.webbakit-staff__socials {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.webbakit-staff__social-link {
+	color: var(--webbakit-primary);
+	text-decoration: none;
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+/* Webba Staff - Style 1: Team card grid */
+.webbakit-staff--style-1 .webbakit-staff__card {
+	text-align: left;
+}
+
+/* Webba Staff - Style 2: Horizontal staff profile cards */
+.webbakit-staff--style-2 .webbakit-staff__card--horizontal {
+	grid-template-columns: 180px 1fr;
+}
+
+/* Webba Staff - Style 3: Circular image specialist cards */
+.webbakit-staff--style-3 .webbakit-staff__card--specialist {
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.webbakit-staff__grid {
+		grid-template-columns: repeat(var(--webbakit-columns-tablet, 2), minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.webbakit-staff__grid {
+		grid-template-columns: repeat(var(--webbakit-columns-desktop, 3), minmax(0, 1fr));
+	}
+}

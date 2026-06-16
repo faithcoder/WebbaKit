@@ -34,10 +34,20 @@ class WebbaKit_Services_Widget extends WebbaKit_Widget_Base {
 	protected function register_controls() {
 		$this->start_controls_section( 'content_section', array( 'label' => esc_html__( 'Content', 'webbakit' ) ) );
 		$this->add_design_style_control();
-		$this->add_section_heading_controls( esc_html__( 'Services designed for easy scheduling.', 'webbakit' ), esc_html__( 'Show durations, outcomes, and booking-friendly service details.', 'webbakit' ) );
+		$this->add_section_heading_controls( esc_html__( 'What Can I Offer for You', 'webbakit' ), esc_html__( 'My Services', 'webbakit' ) );
 
 		$repeater = new Repeater();
-		$repeater->add_control( 'icon', array( 'label' => esc_html__( 'Icon', 'webbakit' ), 'type' => Controls_Manager::ICONS ) );
+		$repeater->add_control(
+			'icon',
+			array(
+				'label'   => esc_html__( 'Icon', 'webbakit' ),
+				'type'    => Controls_Manager::ICONS,
+				'default' => array(
+					'value'   => 'fas fa-eye',
+					'library' => 'fa-solid',
+				),
+			)
+		);
 		$repeater->add_control( 'title', array( 'label' => esc_html__( 'Title', 'webbakit' ), 'type' => Controls_Manager::TEXT, 'default' => esc_html__( 'Consultation', 'webbakit' ), 'label_block' => true ) );
 		$repeater->add_control( 'duration', array( 'label' => esc_html__( 'Duration', 'webbakit' ), 'type' => Controls_Manager::TEXT, 'default' => '30 min' ) );
 		$repeater->add_control( 'description', array( 'label' => esc_html__( 'Description', 'webbakit' ), 'type' => Controls_Manager::TEXTAREA, 'rows' => 3 ) );
@@ -53,8 +63,39 @@ class WebbaKit_Services_Widget extends WebbaKit_Widget_Base {
 				'fields'      => $repeater->get_controls(),
 				'title_field' => '{{{ title }}}',
 				'default'     => array(
-					array( 'title' => esc_html__( 'Consultation', 'webbakit' ), 'duration' => '30 min', 'description' => esc_html__( 'Short introductory session.', 'webbakit' ), 'price' => '$49', 'button_text' => esc_html__( 'View Details', 'webbakit' ) ),
-					array( 'title' => esc_html__( 'Treatment', 'webbakit' ), 'duration' => '60 min', 'description' => esc_html__( 'Longer session with a specialist.', 'webbakit' ), 'price' => '$89', 'button_text' => esc_html__( 'View Details', 'webbakit' ) ),
+					array(
+						'icon'        => array(
+							'value'   => 'fas fa-eye',
+							'library' => 'fa-solid',
+						),
+						'title'       => esc_html__( 'Eye Treatment', 'webbakit' ),
+						'duration'    => '30 min',
+						'description' => esc_html__( 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring.', 'webbakit' ),
+						'price'       => '$49',
+						'button_text' => esc_html__( 'View Eye Treatment', 'webbakit' ),
+					),
+					array(
+						'icon'        => array(
+							'value'   => 'fas fa-syringe',
+							'library' => 'fa-solid',
+						),
+						'title'       => esc_html__( 'Eye Treatment', 'webbakit' ),
+						'duration'    => '60 min',
+						'description' => esc_html__( 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring.', 'webbakit' ),
+						'price'       => '$89',
+						'button_text' => esc_html__( 'View Eye Treatment', 'webbakit' ),
+					),
+					array(
+						'icon'        => array(
+							'value'   => 'fas fa-ambulance',
+							'library' => 'fa-solid',
+						),
+						'title'       => esc_html__( 'Diagnostics', 'webbakit' ),
+						'duration'    => '45 min',
+						'description' => esc_html__( 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring.', 'webbakit' ),
+						'price'       => '$69',
+						'button_text' => esc_html__( 'View Diagnostics', 'webbakit' ),
+					),
 				),
 			)
 		);

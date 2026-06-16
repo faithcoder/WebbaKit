@@ -42,25 +42,53 @@ final class WebbaKit_Assets {
 	}
 
 	/**
-	 * Register shared assets.
+	 * Register shared and widget assets.
 	 *
 	 * @return void
 	 */
 	public function register_assets() {
 		wp_register_style(
-			'webbakit-frontend',
+			'webbakit-base',
 			WEBBAKIT_ASSETS_URL . 'css/frontend.css',
 			array(),
 			WEBBAKIT_VERSION
 		);
 
 		wp_register_script(
-			'webbakit-frontend',
+			'webbakit-base',
 			WEBBAKIT_ASSETS_URL . 'js/frontend.js',
 			array(),
 			WEBBAKIT_VERSION,
 			true
 		);
+
+		$widgets = array(
+			'hero',
+			'services',
+			'booking-form',
+			'staff',
+			'testimonials',
+			'faq',
+			'contact-cta',
+			'pricing',
+		);
+
+		foreach ( $widgets as $widget ) {
+			wp_register_style(
+				'webbakit-' . $widget,
+				WEBBAKIT_ASSETS_URL . 'css/' . $widget . '.css',
+				array( 'webbakit-base' ),
+				WEBBAKIT_VERSION
+			);
+
+			wp_register_script(
+				'webbakit-' . $widget,
+				WEBBAKIT_ASSETS_URL . 'js/' . $widget . '.js',
+				array( 'webbakit-base' ),
+				WEBBAKIT_VERSION,
+				true
+			);
+		}
 	}
 
 	/**
@@ -69,8 +97,8 @@ final class WebbaKit_Assets {
 	 * @return void
 	 */
 	public function enqueue_editor_assets() {
-		wp_enqueue_style( 'webbakit-frontend' );
-		wp_enqueue_script( 'webbakit-frontend' );
+		wp_enqueue_style( 'webbakit-base' );
+		wp_enqueue_script( 'webbakit-base' );
 
 		wp_enqueue_style(
 			'webbakit-editor',

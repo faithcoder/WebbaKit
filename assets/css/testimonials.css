@@ -1,0 +1,73 @@
+/* Webba Testimonials - Base */
+.webbakit-testimonials__grid {
+	display: grid;
+	grid-template-columns: repeat(var(--webbakit-columns-mobile, 1), minmax(0, 1fr));
+	gap: 1.25rem;
+}
+
+.webbakit-testimonials__card,
+.webbakit-testimonials__feature,
+.webbakit-testimonials__strip {
+	padding: 1.5rem;
+	border: 1px solid var(--webbakit-border);
+	border-radius: var(--webbakit-radius);
+	box-shadow: var(--webbakit-shadow);
+	background: var(--webbakit-white);
+}
+
+.webbakit-testimonials__person {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.webbakit-testimonials__name {
+	margin: 0;
+	font-size: 1.2rem;
+	line-height: 1.3;
+}
+
+.webbakit-testimonials__rating {
+	margin-bottom: 1rem;
+	color: #f59e0b;
+	letter-spacing: 0.12em;
+}
+
+.webbakit-testimonials__strip {
+	display: grid;
+	gap: 1rem;
+}
+
+.webbakit-testimonials__strip-item {
+	display: grid;
+	gap: 0.35rem;
+}
+
+/* Webba Testimonials - Style 1: Three-column testimonial cards */
+.webbakit-testimonials--style-1 .webbakit-testimonials__card {
+	text-align: left;
+}
+
+/* Webba Testimonials - Style 2: Large quote layout */
+.webbakit-testimonials--style-2 .webbakit-testimonials__feature {
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+/* Webba Testimonials - Style 3: Minimal review strip */
+.webbakit-testimonials--style-3 .webbakit-testimonials__strip {
+	background: linear-gradient(180deg, rgba(37, 99, 235, 0.05), rgba(255, 255, 255, 1));
+}
+
+@media (min-width: 768px) {
+	.webbakit-testimonials__grid {
+		grid-template-columns: repeat(var(--webbakit-columns-tablet, 2), minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.webbakit-testimonials__grid {
+		grid-template-columns: repeat(var(--webbakit-columns-desktop, 3), minmax(0, 1fr));
+	}
+}

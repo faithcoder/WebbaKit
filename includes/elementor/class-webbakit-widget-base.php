@@ -34,7 +34,7 @@ abstract class WebbaKit_Widget_Base extends Widget_Base {
 	 * @return array
 	 */
 	public function get_style_depends() {
-		return array( 'webbakit-frontend' );
+		return array( 'webbakit-base', $this->get_widget_asset_handle() );
 	}
 
 	/**
@@ -43,7 +43,16 @@ abstract class WebbaKit_Widget_Base extends Widget_Base {
 	 * @return array
 	 */
 	public function get_script_depends() {
-		return array( 'webbakit-frontend' );
+		return array( 'webbakit-base', $this->get_widget_asset_handle() );
+	}
+
+	/**
+	 * Get the asset handle for the current WebbaKit widget.
+	 *
+	 * @return string
+	 */
+	protected function get_widget_asset_handle() {
+		return sanitize_key( $this->get_name() );
 	}
 
 	/**

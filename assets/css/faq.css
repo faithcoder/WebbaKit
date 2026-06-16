@@ -1,0 +1,55 @@
+/* Webba FAQ - Base */
+.webbakit-faq__list,
+.webbakit-faq__cards {
+	display: grid;
+	gap: 1rem;
+}
+
+.webbakit-faq__item {
+	padding: 1.5rem;
+}
+
+.webbakit-faq__question {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: var(--webbakit-dark);
+	background: none;
+	border: 0;
+	text-align: left;
+	cursor: pointer;
+	font-size: 1.2rem;
+	line-height: 1.3;
+}
+
+.webbakit-faq__grid {
+	display: grid;
+	gap: 1.25rem;
+}
+
+/* Webba FAQ - Style 1: Accordion FAQ */
+.webbakit-faq--style-1 .webbakit-faq__question {
+	font-weight: 700;
+}
+
+/* Webba FAQ - Style 2: Two-column FAQ grid */
+.webbakit-faq--style-2 .webbakit-faq__grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Webba FAQ - Style 3: FAQ cards */
+.webbakit-faq--style-3 .webbakit-faq__item {
+	background: linear-gradient(180deg, rgba(37, 99, 235, 0.04), rgba(255, 255, 255, 1));
+}
+
+@media (min-width: 768px) {
+	.webbakit-faq__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.webbakit-faq__grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}

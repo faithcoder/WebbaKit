@@ -1,0 +1,63 @@
+/* Webba Contact CTA - Base */
+.webbakit-contact-cta {
+	padding: 1.5rem;
+	background: var(--webbakit-white);
+}
+
+.webbakit-contact-cta__layout {
+	display: grid;
+	gap: 1rem;
+	align-items: center;
+}
+
+.webbakit-contact-cta__meta-label {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	padding: 0.3rem 0.8rem;
+	color: var(--webbakit-primary);
+	background: #dbeafe;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+.webbakit-contact-cta__image img {
+	display: block;
+	width: 100%;
+	border-radius: inherit;
+	object-fit: cover;
+}
+
+/* Webba Contact CTA - Style 1: Simple centered CTA */
+.webbakit-contact-cta--style-1 .webbakit-contact-cta__content {
+	max-width: 760px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* Webba Contact CTA - Style 2: Split CTA with contact details */
+.webbakit-contact-cta--style-2 .webbakit-contact-cta__meta {
+	display: grid;
+	gap: 0.75rem;
+}
+
+/* Webba Contact CTA - Style 3: Gradient-style CTA card */
+.webbakit-contact-cta--style-3 {
+	background: linear-gradient(145deg, rgba(37, 99, 235, 0.08), rgba(15, 23, 42, 0.02));
+}
+
+.webbakit-contact-cta--style-3 .webbakit-contact-cta__layout--card {
+	background: linear-gradient(145deg, rgba(37, 99, 235, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.webbakit-contact-cta__layout--card {
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+	.webbakit-contact-cta__layout,
+	.webbakit-contact-cta__layout--card {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}

@@ -1,0 +1,45 @@
+/* Webba Booking Form - Base */
+.webbakit-booking-form__layout {
+	display: grid;
+	gap: 2rem;
+}
+
+.webbakit-booking-form__panel {
+	padding: 1.5rem;
+	background: var(--webbakit-white);
+}
+
+.webbakit-booking-form__form-wrap {
+	background: var(--webbakit-white);
+}
+
+.webbakit-booking-form__notice {
+	margin: 0;
+	padding: 1rem;
+	color: #7c2d12;
+	background: #ffedd5;
+	border-radius: 12px;
+}
+
+/* Webba Booking Form - Style 1: Simple centered booking box */
+.webbakit-booking-form--style-1 .webbakit-booking-form__panel {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/* Webba Booking Form - Style 2: Two-column content + booking form */
+.webbakit-booking-form--style-2 .webbakit-booking-form__copy {
+	align-self: center;
+}
+
+/* Webba Booking Form - Style 3: Highlighted booking panel with CTA text */
+.webbakit-booking-form--style-3 .webbakit-booking-form__panel--highlight {
+	border: 0;
+	background: linear-gradient(145deg, rgba(37, 99, 235, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+@media (min-width: 768px) {
+	.webbakit-booking-form__layout {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
